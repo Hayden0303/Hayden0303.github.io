@@ -1,0 +1,44 @@
+/*CSS for responsive menu*/
+
+    /*make a menu items vertical*/
+    nav ul li{display:block;}
+
+/*to unhide menu items*/
+.menuShow{display:block;}
+
+.page{width:100%;height:200vh;}
+nav ul li{display:inline;}
+#page0{background:yellow}
+#page1{background:red}
+#page2{background:green}
+#page3{background:blue}
+
+.flex-container{
+    display:flex;
+}
+
+header{
+
+    float:left;
+    width:25%;
+    height: 20vh;
+    position:sticky;
+    top:0;
+    background-size: cover;
+    background-position: center;
+    background-color:slategray;color:black;
+}
+
+nav{
+    float:right;
+    width:75%;
+    height: 20vh;
+    position:sticky;
+    top:0;
+    background-size: cover;
+    background-position: center;
+    background-color:slategray;color:black;
+}
+
+
+.clearfloat{float:none; /*resets float*/}
