@@ -330,6 +330,24 @@ td, th {
     width:100%;
   }
 
+  .fallable {
+    width: 90px;
+    height: 100px;
+    display: block;
+    animation: fallDown 3s linear forwards;
+    cursor: pointer;
+  }
+
+  @keyframes fallDown {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(400px);
+      display:none;
+    }
+  }
+
 }
 
 .clearfloat{float:none; /*resets float*/}
