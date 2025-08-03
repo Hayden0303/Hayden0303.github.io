@@ -69,7 +69,7 @@ h1, h2{text-align: center;} /*align all h1 and h2 to center*/
   }
   to {
     transform: translateY(500px);
-    display:none;
+    display:none !important;
   }
 }
 
