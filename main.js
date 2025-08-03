@@ -452,13 +452,6 @@ var gameOngoing;
 let tilespawn;
 
 function createFallingImage() {
-    if(gameOngoing == false){
-        document.getElementById("ChiCounter").textContent = "You got Chi " + chiCounter + " times!";
-        document.getElementById("PongCounter").textContent = "You got Pong " + pongCounter + " times!";
-        clearInterval(tilespawn);
-        headerBtn.classList.remove("inQuiz");
-        show(5);
-    }
 
     const minigame = document.querySelector(".minigame");
     const randomX = Math.random() * 90;
@@ -488,6 +481,15 @@ function createFallingImage() {
             }else{
                 document.getElementById("gameText").textContent = "????";
                 gameOngoing = false;
+                clearInterval(tilespawn);
+                var tiles = document.querySelectorAll('.fallable');
+                for (var i = 0; i < tiles.length; i++) {
+                    tiles[i].parentNode.removeChild(tiles[i]);
+                }
+                document.getElementById("ChiCounter").textContent = "You got Chi " + chiCounter + " times!";
+                document.getElementById("PongCounter").textContent = "You got Pong " + pongCounter + " times!";
+                headerBtn.classList.remove("inQuiz");
+                show(5);
             }
 
             for (let i = 1; i < 4; i++) {
@@ -537,7 +539,15 @@ function startGame() {
     chiCounter = 0;
     pongCounter = 0;
     gameOngoing = true;
-    tilespawn = setInterval(createFallingImage, 1000);
+
+    // Clear any leftover interval before starting a new one
+    clearInterval(tilespawn); 
+
+    tilespawn = setInterval(function () {
+        if (gameOngoing) {
+            createFallingImage();
+        }
+    }, 1000);
 }
 
 const btnFS=document.querySelector("#btnFS");
