@@ -3,42 +3,321 @@
     /*make a menu items vertical*/
     nav ul li{display:block;}
 
-/*to unhide menu items*/
-.menuShow{display:block;}
+*{box-sizing: border-box;margin:0;} /*box-sizing and all margins:0*/
 
-.page{width:100%;height:200vh;}
-nav ul li{display:inline;}
-#page0{background:yellow}
-#page1{background:red}
-#page2{background:green}
-#page3{background:blue}
+h1, h2{text-align: center;} /*align all h1 and h2 to center*/
+
+#headerBtn{
+  background-color: #2E8B57;
+}
+
+.navBtn{
+  text-align: center;
+}
+
+.page{width:99vw;height:200vh;}
+#page4{
+    height:100vh;
+}
+
+#page5{
+    height:100vh;
+}
+
+#page6{
+    height:100vh;
+}
+
+#page7{
+    height:100vh;
+}
+
+@keyframes dropDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes dropUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+}
+
+
+.fallable {
+  width: 90px;
+  height: 100px;
+  display: block;
+  animation: fallDown 3s linear forwards;
+  cursor: pointer;
+}
+
+@keyframes fallDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(500px);
+    display:none;
+  }
+}
+
+.text.down {
+    animation: dropDown 0.6s;
+}
+.text.up {
+    animation: dropUp 0.6s;
+}
 
 .flex-container{
     display:flex;
 }
 
-header{
+.grid-container{
+    display:grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 20% 80%;
+    padding-top:10%;
+}
 
-    float:left;
-    width:25%;
-    height: 20vh;
-    position:sticky;
-    top:0;
+header ul il{
+    display: inline;
+}
+
+body{
+    background-color:rgb(234, 215, 195);;
+}
+
+header{
+    height: 15vh;
     background-size: cover;
     background-position: center;
-    background-color:slategray;color:black;
+    background-color:#2E8B57;color:black;
 }
+
+main.innerMain{
+    float: right;
+    width:75%;
+    height: auto;
+    background-color:rgb(234, 215, 195);
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* space between items */
+}
+
+main.quizMain{
+    
+    width:100%;
+    height: 100vh;
+    background-color:rgb(234, 215, 195);
+}
+
+main.quizStartMain{
+    
+    width:100%;
+    height: 100vh;
+    background-color:rgb(234, 215, 195);
+}
+
+main.minigameMain{
+    
+    width:100%;
+    height: 100vh;
+    background-color:rgb(234, 215, 195);
+    display:flex;
+    flex-direction:column;
+    gap: 10px; /* space between items */
+}
+
+
+.minigame{
+    
+    width:100%;
+    height: 100vh;
+    background-color:rgb(234, 215, 195);
+}
+
+.circle{
+    display:none;
+}
+
+.top{
+    display:grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+.options{
+    display:grid;
+    grid-template-columns: 49% 49%;
+    padding-top: 20vh;
+    row-gap: 50px; /* space between items */
+    column-gap: 30px; /* space between items */
+    height:50vh
+    
+}
+
+#StartQuizBtn{
+  margin-top: 20%;
+  margin-left: 45%;
+}
+
+#timerBar{
+  height: 5%;
+  width: 100%;
+  background-color: #4caf50;
+}
+
+.startTimer{
+  animation: shrinkTimer 5s linear forwards;
+}
+.paused {
+  animation-play-state: paused;
+}
+
+
+@keyframes shrinkTimer {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
 
 nav{
-    float:right;
-    width:75%;
-    height: 20vh;
+    float: left;
+    width:25%; /*adjust width to be 25% of parent container */
+    height: 100vh;
     position:sticky;
     top:0;
+    background-color:#D8CAB8;color:black;
     background-size: cover;
     background-position: center;
-    background-color:slategray;color:black;
 }
 
+.ulnav {
+    list-style-type: none;
+    text-align:center;
+}
+
+button{
+    background-color: #FFF8E1;
+    color: BLACK;
+    border:none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor:pointer;
+}
+
+footer{
+    background-color: #4caf50;
+}
+
+.correctOption{
+    background-color: green;
+}
+
+.wrongOption{
+    background-color: red;
+}
+
+.inQuiz{
+    display:none;
+}
+
+#scoreDisplay{
+    text-align: center;
+
+}
+
+#bottomArea{
+    width:100%;
+    height:23%;
+    background-color: green;
+    position:absolute;
+    bottom:0;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;   /* centers items horizontally */
+
+}
+
+.emptyTile{
+    display: none;
+}
+
+.selectedTile{
+    display:block;
+}
+
+.Counters{
+    text-align: center;
+}
+
+table{
+    width: 90%;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td, th {
+    border: 1px solid rgb(36, 113, 106);
+    padding: 1%;
+    text-align: center;
+}
+
+
+
+
+
+  #homeScreenImg{
+  width:100%;
+  height:50%;
+}
+
+@media screen and (max-width: 800px){
+
+  nav{
+      order:1;
+      height:auto;
+      width:100%;
+      position:sticky;
+      top:0;
+      z-index:1;
+      padding-top: 3%;
+  }
+
+  .navBtn{
+    display:grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 50% 50%;
+    padding-bottom:5%;
+  }
+
+  main{
+      order:2;
+      height:auto;
+      width: 100%;
+  }
+
+  main.innerMain{
+    width:100%;
+  }
+
+}
 
 .clearfloat{float:none; /*resets float*/}
