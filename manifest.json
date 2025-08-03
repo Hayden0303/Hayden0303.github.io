@@ -7,7 +7,7 @@
     "theme_color": "#2E8B57",
     "icons": [
         { 
-            "src": "mahjong-tiles-clipart-6.png",
+            "src": "Images/mahjong-tiles-clipart-6.png",
             "sizes": "64x64",
             "type": "image/png"
         }
