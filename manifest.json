@@ -1,0 +1,15 @@
+{ 
+    "name": "Hayden Teiw",
+    "short_name": "HT",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#2E8B57",
+    "icons": [
+        { 
+            "src": "mahjong-tiles-clipart-6.png",
+            "sizes": "64x64",
+            "type": "image/png"
+        }
+    ]
+}
