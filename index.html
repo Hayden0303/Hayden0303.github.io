@@ -1,32 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Index</title>
+    <meta charset="UTF-8">
+    <title>All About Mahjong</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src = "main.js" defer></script>
-    <link href = "style.css" type = "text/css" rel = "stylesheet">
-</head>
+    <script src="main.js" defer></script>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head id = "top">
 <body>
-    <header>
-        <h1>All About Mahjong</h1>
-    </header>
-    <nav> 
+    <header id = "headerBtn">
         <ul>
-            <li><button id="homebtn">Home</button></li>
-            <li><button id="page1btn">History</button></li>
-            <li><button id="page2btn">Types of Mahjong</button></li>
-            <li><button id="page3btn">How to play</button></li>
+            <h1>All About Mahjong</h1>
+            <il><button id="homebtn">Home</button></il>
+            <il><button id="page1btn">History</button></il>
+            <il><button id="page2btn">Types of Mahjong</button></il>
+            <il><button id="page3btn">How to play</button></il>
+            <il><button id="page4btn">Quiz</button></il>
+            <il><button id="page5btn">Minigame</button></il>
         </ul>
-    </nav>
-    <main id="pagecontainer">
-        <section class="page" id="page0"> home content </section>
-        <section class="page" id="page1"> page 1 content </section>
-        <section class="page" id="page2"> page 2 content </section>
-        <section class="page" id="page3"> page 3 content </section>
-    </main>
-    
+    </header>
+       
+    <div class = "flex-container">
+        <main id="pagecontainer">
+
+            <section class="page" id="page0">
+                <h1>Welcome To Mahjong!</h1>
+                
+                <img id = "homeScreenImg" src = "Images/homepage_mahjong.jpg" alt = "homepage">
+            </section>
+
+            <section class = "page" id = "page1">
+                <nav>
+                    <h2>This Page</h2>
+                    <ul class = "navBtn">
+                        <li><a href="#IntroBtn"> Introduction</a></li>
+                        <li><a href="#HistoryBtn"> History</a></li>
+                        <li><a href="#GlobalJourneyBtn"> Global Journey</a></li>
+                        <li><a href="#TilesBtn"> The Tiles</a></li>
+                    </ul>
+                </nav>
+
+                <main class = "innerMain">
+                    <button id = "IntroBtn">Introduction</button>
+
+                    <p class = "text" id = "text0">
+                        Welcome to the world of mahjong — where ancient strategy meets timeless play. 
+                        This isn't just a game with pretty tiles and clacking sounds. 
+                        It's a cultural journey that spans empires, revolutions, and living room table battles.
+                    </p>
+
+                    <button id = "HistoryBtn">History</button>
+
+                    <p class = "text" id = "text1"> 
+                    Ancient Whispers & Mythical Origins
+                        - One popular legend claims Confucius invented mahjong around 500 BC, inspired by his love of birds — hence the name “mahjong,” meaning sparrow.
+                        - The three dragon tiles (Red, Green, White) are said to represent Confucian virtues: benevolence, sincerity, and filial piety.
+                        - While poetic, historians largely dismiss this tale due to lack of evidence before the Taiping era (mid-1800s).
+                    
+                    From Cards to Tiles: The Real Evolution
+                        - Mahjong likely evolved from Madiao, a Chinese card game from the Ming Dynasty (1368–1644).
+                        - Madiao used 40 paper cards with suits and numbers — very similar to modern mahjong tiles.
+                        - By the mid-19th century, mahjong emerged as a tile-based game, possibly created by:
+                        - Army officers during the Taiping Rebellion
+                        - A nobleman in Shanghai
+                        - Two brothers in Ningbo
+
+                    Rise in China: Qing Dynasty to Early 20th Century
+                        - Mahjong spread rapidly during the Qing Dynasty, becoming a favorite among aristocrats and commoners alike.
+                        - Played in tea houses, homes, and social clubs, it became a symbol of leisure and intellect.
+                        - Tiles were often made from bone or ivory, adding to its prestige.
+
+                </p>
+
+                    <button id = "GlobalJourneyBtn">Global Journey</button>
+
+                    <p class = "text" id = "text2">
+                        Global Expansion & Western Adaptation
+                        - In the 1920s, American businessman Joseph P. Babcock brought mahjong to the U.S. from Shanghai.
+                        - He simplified the rules and published “Mah-Jongg: The Game of a Hundred Intelligences”.
+                        - Mahjong became a roaring fad, with themed parties and custom sets sold in department stores.
+                        - The game also spread to Japan, where it evolved into Riichi Mahjong, with unique scoring and rules.
+                    </p>
+
+                    <button id = "TilesBtn">The tiles</button>
+
+                    <p class = "text" id = "text3">
+                    From Paper to Bone: Origins of Tile Design
+                        - Mahjong began as a card game (Madiao) during the Ming Dynasty, using printed paper cards.
+                        - As the game evolved into tiles in the Qing Dynasty, artisans began crafting them from bone, bamboo, and ivory.
+                        - These materials allowed for carving and painting, turning each tile into a miniature work of art.
+                        - Early designs were inspired by Chinese currency, nature, and Confucian ideals — not just for aesthetics, but to embed meaning into gameplay.
+
+                    Suit Tiles: Symbolism in Everyday Life
+                        Characters (萬 / Wàn)
+                        - “Wàn” means ten thousand, symbolizing abundance and prosperity.
+                        - The calligraphy-style numerals reflect elegance and scholarly tradition.
+                        - This suit was likely chosen to represent wealth in large numbers, echoing the value of high-ranking officials and merchants.
+                        Bamboo (索 / Suǒ)
+                        - Represents strings used to bind ancient coins — a metaphor for connection and resilience.
+                        - The 1 Bamboo tile often features a bird (usually a sparrow or peacock), which evolved from early artistic interpretations of coin strings.
+                        - Bamboo itself is a symbol of flexibility and strength in Chinese culture.
+                        Circles (筒 / Tóng)
+                        - Modeled after ancient copper coins with round shapes and square holes.
+                        - Symbolizes commerce, luck, and financial success.
+                        - The circular motif was chosen to evoke the flow of wealth and the cyclical nature of fortune.
+
+                    Honor Tiles: Winds & Dragons as Cosmic Forces
+                        Wind Tiles (東, 南, 西, 北)
+                        - Represent the four cardinal directions, aligning with feng shui and Chinese cosmology.
+                        - Each direction carries spiritual meaning:
+                        - East: beginnings and spring
+                        - South: growth and summer
+                        - West: decline and autumn
+                        - North: endurance and winter
+                        Dragon Tiles (中, 發, 白)
+                        - Red Dragon (中 / Zhōng): “Center” — symbolizes success, power, and hitting the mark (like passing imperial exams).
+                        - Green Dragon (發 / Fā): “Wealth” — tied to growth and prosperity, often linked to the phrase 發財 (fa cai, “get rich”).
+                        - White Dragon (白 / Bái): “Purity” — represents clarity, honesty, and freedom from corruption.
+                        These tiles were likely chosen to reflect Confucian virtues and imperial symbolism, making the game a reflection of moral and cosmic order.
+
+                    Bonus Tiles: Nature’s Cycle and Cultural Icons
+                        - Flowers and Seasons tiles were added later to enhance gameplay and symbolism.
+                        - Each flower (Plum, Orchid, Bamboo, Chrysanthemum) corresponds to a Confucian ideal and a season.
+                        - These tiles celebrate natural beauty, time, and balance — reinforcing the idea that mahjong is more than a game; it’s a meditation on life.
+
+                    Artistic License & Regional Flair
+                        - Tile designs varied by region and artisan:
+                        - In 1920s Austria, tiles were inspired by Japanese woodblock prints.
+                        - In Germany and France, sets featured reptiles, birds, and even golf themes.
+                        - The #1 Bamboo tile became a canvas for creativity — morphing from a coin string into birds, peacocks, and cranes perched on bamboo.
+                        This artistic freedom turned mahjong sets into collectible treasures, each telling a unique story.
+                        </p>
+                </main>
+            </section>
+
+            <section class = "page" id = "page2">
+                <nav>
+                    <h2>This Page</h2>
+                    <ul class = "navBtn">
+                        <li><a href="#ChineseBtn"> Chinese Mahjong</a></li>
+                        <li><a href="#CantoneseBtn"> Cantonese Mahjong</a></li>
+                        <li><a href="#JapaneseBtn"> Japanese Mahjong</a></li>
+                        <li><a href="#AmericanBtn"> American Mahjong</a></li>
+                        <li><a href="#TaiwaneseBtn"> Taiwanese Mahjong</a></li>
+                        <li><a href="#OfficialChineseBtn"> Official Chinese Mahjong</a></li>
+                        <li><a href="#SingaporeanBtn"> Singaporean Mahjong</a></li>
+                        <li><a href="#ComparisonTableBtn"> Comparison Table</a></li>
+                    </ul>
+                </nav>
+                <main class = "innerMain">
+                    <h1>Mahjong Variants: Origins, Rules & Features</h1>
+
+                <button id = "ChineseBtn">1. Chinese Classical Mahjong</button>
+
+                <div class = "text" id = "text4">
+                    <p><strong>Origin:</strong> Late 19th century, derived from the card game Madiao.</p>
+                    <p><strong>Gameplay:</strong> 144 tiles, standard 13-tile hands, win with 4 sets + 1 pair.</p>
+                    <p><strong>Scoring:</strong> Based on fan (points); rare hands yield exponential scores.</p>
+                </div>
+
+                <button id = "CantoneseBtn">2. Cantonese (Hong Kong) Mahjong</button>
+
+                <div class = "text" id = "text5">
+                    <p><strong>Origin:</strong> Southern China, modernized classical rules.</p>
+                    <p><strong>Gameplay:</strong> Same tile set; fast-paced play and simplified scoring.</p>
+                    <p><strong>Scoring:</strong> Minimum 3 fan; flowers and dragons score bonuses.</p>
+                </div>
+
+                <button id = "JapaneseBtn">3. Japanese Riichi Mahjong</button>
+
+                <div class = "text" id = "text6">
+                    <p><strong>Origin:</strong> Japan, 1920s adaptation with strict yaku rules.</p>
+                    <p><strong>Gameplay:</strong> 136 tiles, includes riichi declarations, dora tiles.</p>
+                    <p><strong>Scoring:</strong> Based on han (multipliers) and fu (base points).</p>
+                    <ul>
+                    <li>Includes red fives and closed/open hand distinctions.</li>
+                    <li>Unique features: Furiten and bluffing strategy.</li>
+                    </ul>
+                </div>
+
+                <button id = "AmericanBtn">4. American Mahjong</button>
+                
+                <div class = "text" id = "text7">
+                    <p><strong>Origin:</strong> Joseph Babcock in the 1920s; adapted for Jewish-American communities.</p>
+                    <p><strong>Gameplay:</strong> 152 tiles including Jokers and Charleston exchange phase.</p>
+                    <p><strong>Scoring:</strong> Based on a yearly card with fixed hand combinations.</p>
+                </div>
+
+                <button id = "TaiwaneseBtn">5. Taiwanese Mahjong</button>
+                
+                <div class = "text" id = "text8">
+                    <p><strong>Origin:</strong> Local Taiwanese adaptations; expanded complexity.</p>
+                    <p><strong>Gameplay:</strong> 16-tile hands, special scoring for flower combinations.</p>
+                    <p><strong>Scoring:</strong> Based on tai system; emphasis on big hands and combos.</p>
+                </div>
+
+                <button id = "OfficialChineseBtn">6. Chinese Official (Guobiao) Mahjong</button>
+
+                <div class = "text" id = "text9">
+                    <p><strong>Origin:</strong> Standardized in 1998 for tournaments and global play.</p>
+                    <p><strong>Gameplay:</strong> 144 tiles, minimum 8-point winning hands required.</p>
+                    <p><strong>Scoring:</strong> Based on an 81-pattern score system; highly structured.</p>
+                </div>
+
+                <button id = "SingaporeanBtn">7. Singapore Mahjong</button>
+                
+                <div class = "text" id = "text10">
+                    <p><strong>Origin:</strong> A hybrid of Classical, Cantonese, and Taiwanese styles.</p>
+                    <p><strong>Gameplay:</strong> 148 tiles (includes animal tiles); flexible house rules.</p>
+                    <p><strong>Unique Features:</strong></p>
+                    <ul>
+                    <li>Animal tiles (Cat, Rat, Rooster, Centipede)</li>
+                    <li>Flowers and animals drawn and replaced immediately for bonus draws</li>
+                    <li>Social and festive gameplay focus</li>
+                    </ul>
+                    <p><strong>Scoring:</strong> Based on “tais”; rewards for rare hands and matched flowers/animals.</p>
+                </div>
+
+                <button id = "ComparisonTableBtn">Comparison Table</button>
+                <table class = "text" id = "text11">
+                    <tr>
+                    <th>Variant</th>
+                    <th>Tile Count</th>
+                    <th>Key Features</th>
+                    <th>Strategy Level</th>
+                    </tr>
+                    <tr>
+                    <td>Chinese Classical</td>
+                    <td>144</td>
+                    <td>Fan-based scoring, pattern hands</td>
+                    <td>High</td>
+                    </tr>
+                    <tr>
+                    <td>Cantonese</td>
+                    <td>144</td>
+                    <td>Simplified scoring, quick play</td>
+                    <td>Medium</td>
+                    </tr>
+                    <tr>
+                    <td>Japanese Riichi</td>
+                    <td>136</td>
+                    <td>Riichi, Dora, Furiten</td>
+                    <td>Very High</td>
+                    </tr>
+                    <tr>
+                    <td>American</td>
+                    <td>152</td>
+                    <td>Jokers, annual card, Charleston</td>
+                    <td>Medium</td>
+                    </tr>
+                    <tr>
+                    <td>Taiwanese</td>
+                    <td>144</td>
+                    <td>16-tile hands, flower scoring</td>
+                    <td>High</td>
+                    </tr>
+                    <tr>
+                    <td>Chinese Official</td>
+                    <td>144</td>
+                    <td>Min 8 pts, standardized patterns</td>
+                    <td>Very High</td>
+                    </tr>
+                    <tr>
+                    <td>Singapore</td>
+                    <td>148</td>
+                    <td>Animal tiles, flexible rules</td>
+                    <td>Medium–High</td>
+                    </tr>
+                </table>
+
+                </main>
+            </section>
+
+            <section class = "page" id = "page3">
+                <nav>
+                    <h2>This Page</h2>
+                    <ul class = "navBtn">
+                        <li><a href="#TileSetBtn"> Tile Set</a></li>
+                        <li><a href="#ObjectiveBtn"> Objective</a></li>
+                        <li><a href="#GameSetupBtn"> Game Setup</a></li>
+                        <li><a href="#TileCombinationsBtn"> Tile Combinations</a></li>
+                        <li><a href="#SpecialTilesBtn"> Special Tiles</a></li>
+                        <li><a href="#GameplayBtn"> Gameplay</a></li>
+                        <li><a href="#WinningBtn"> Winning the Game</a></li>
+                        <li><a href="#ScoringBtn"> Scoring</a></li>
+                        <li><a href="#PaymentRulesBtn"> Payment Rules</a></li>
+                        <li><a href="#EtiquetteBtn"> Etiquette & House Rules</a></li>
+                    </ul>
+                </nav>
+
+                <main class = "innerMain">
+                    <h1>Singapore Mahjong Rules</h1>
+
+                    <button id = "TileSetBtn">1. Tile Set</button>
+                        <ul class = "text" id = "text12">
+                            <li><strong>Total Tiles:</strong> 148</li>
+                            <li><strong>Suits:</strong>Bamboo, Circle, Character (36 tiles each)</li>
+                            <li><strong>Honor Tiles:</strong> Winds (East, South, West, North – 16 tiles), Dragons (Red, Green, White – 12 tiles)</li>
+                            <li><strong>Flower Tiles:</strong> 8 (4 Seasons + 4 Flowers)</li>
+                            <li><strong>Animal Tiles:</strong> 4 (Cat, Rat, Rooster, Centipede)</li>
+                        </ul>
+
+                    <button id = "ObjectiveBtn">2. Objective</button>
+                    <div class = "text" id = "text13">
+
+                        <p>Form a winning hand of 14 tiles consisting of:</p>
+                        <ul>
+                            <li>4 sets (Chow, Pong, or Kong)</li>
+                            <li>1 pair (called an Eye)</li>
+                            <li>Meet the minimum scoring requirement (usually 1 or more “tai”)</li>
+                        </ul>
+
+                    </div>
+
+                    <button id = "GameSetupBtn">3. Game Setup</button>
+
+                        <ul class = "text" id = "text14">
+                            <li>Each player starts with 13 tiles (dealer starts with 14)</li>
+                            <li>Flower and Animal tiles are immediately revealed and replaced from the back of the wall</li>
+                            <li>Tiles are drawn from the wall in counterclockwise order</li>
+                        </ul>
+
+                    <button id = "TileCombinationsBtn">4. Tile Combinations</button>
+
+                        <ul class = "text" id = "text15">
+                            <li><strong>Chow:</strong> 3 consecutive tiles of the same suit</li>
+                            <li><strong>Pong:</strong> 3 identical tiles</li>
+                            <li><strong>Kong:</strong> 4 identical tiles (requires replacement tile)</li>
+                            <li><strong>Eye:</strong> A pair of identical tiles</li>
+                        </ul>
+
+                    <button id = "SpecialTilesBtn">5. Special Tiles</button>
+
+                        <ul class = "text" id = "text16">
+                            <li><strong>Flower/Season:</strong> Bonus points; replaced immediately</li>
+                            <li><strong>Animal Tiles:</strong> Bonus points; Cat & Rat, Rooster & Centipede form pairs</li>
+                        </ul>
+
+                    <button id = "GameplayBtn">6. Gameplay</button>
+                    
+                        <ul class = "text" id = "text17">
+                            <li>Players take turns drawing and discarding tiles</li>
+                            <li>Players may claim discarded tiles to complete Chow (only from previous player), Pong, or Kong</li>
+                            <li>Winning tile can be self-drawn or claimed from discard</li>
+                            <li>Priority for claiming discard: Win > Kong > Pong > Chow</li>
+                        </ul>
+
+                    <button id = "WinningBtn">7. Winning the Game</button>
+                    
+                        <ul class = "text" id = "text18">
+                            <li>Declare “Hu” when you complete a valid hand</li>
+                            <li>Must meet minimum tai requirement</li>
+                            <li>Special hands like 13 Wonders or 8 Flowers may auto-win</li>
+                        </ul>
+
+                    <button id = "ScoringBtn">8. Scoring (Tai System)</button>
+                    
+                        <ul class = "text" id = "text19">
+                            <li><strong>Basic Win:</strong> 1 tai</li>
+                            <li><strong>Self-drawn win:</strong> +1 tai</li>
+                            <li><strong>Pong of Dragon or Wind:</strong> +1 tai</li>
+                            <li><strong>All Pongs:</strong> +2 tai</li>
+                            <li><strong>Pure One Suit:</strong> +5 tai</li>
+                            <li><strong>All Flowers/Seasons:</strong> +4 tai</li>
+                            <li><strong>Animal pairs:</strong> +2 tai</li>
+                        </ul>
+
+                    <button id = "PaymentRulesBtn">9. Payment Rules</button>
+                        <ul class = "text" id = "text20">
+                            <li><strong>Shooter Pays:</strong> Only the player who discarded the winning tile pays</li>
+                            <li><strong>Everyone Pays:</strong> All players pay, with shooter paying more</li>
+                            <li>Common stakes: $0.30/$0.60 or $1/$2 per tai</li>
+                        </ul>
+
+                    <button id = "EtiquetteBtn">10. Etiquette & House Rules</button>
+
+                        <ul class = "text" id = "text21">
+                            <li>Clarify house rules before starting</li>
+                            <li>Respect discard timing and tile arrangement</li>
+                            <li>Use chips or tokens for scoring in casual games</li>
+                        </ul>
+
+                </main>
+
+            </section>
+
+            <section class = "page" id = "page4">
+                <main class = "quizMain">
+                    <h1>Quiz</h1>
+                    <h2 id = "scoreDisplay">Display Score</h2>
+                    <button id = "StartQuizBtn">Start Quiz</button>
+                </main>
+            </section>
+
+            <section class = "page" id = "page5">
+                <main class = "minigameMain">
+                    <button id = "StartGameBtn">Start Game</button>
+                    <button id = "GameObjectiveBtn">Objective</button>
+                    <div class = "text" id = "text22">
+                        <p>Train your mahjong knowledge by selecting the right tiles to form a chi or a pong</p>
+                        <p>Form neither and you lose</p>
+                    </div>
+                    <button id = "ControlsBtn">Controls</button>
+                    <div class = "text" id = "text23">
+                        <p>Click on the tiles</p>
+                    </div>
+                    <button id = "CreditsBtn">Credits</button>
+                    <div class = "text" id = "text24">
+                        <p>Tile images by GitHub – FluffyStuff's Riichi Mahjong Tiles</p>
+                    </div>
+                    <h2 class = "Counters" id = "ChiCounter"></h2>
+                    <h2 class = "Counters" id = "PongCounter"></h2>
+                </main> 
+            </section>
+
+            <section class = "page" id = "page6">
+                <main class = "quizStartMain">
+                    <div class = "top">
+                        <h2 id = "QnNumber">QnNo</h2>
+                        <h3 id = "Question">Question</h3>
+                        <h2 id = "currentScore">Score</h2>
+                    </div>
+                    <div id="timerBar"></div>
+                    <div class = "options">
+                        <button id = "Option1">Option1</button>
+                        <button id = "Option2">Option2</button>
+                        <button id = "Option3">Option3</button>
+                        <button id = "Option4">Option4</button>
+                    </div>
+                </main>
+            </section>
+
+            <section class = "page" id = "page7">
+                <main class = "minigame">
+                    <h1 id = "gameText"></h1>
+                    <div id = "bottomArea">
+                        <img class = "emptyTile" id = "emptyTile1">
+                        <img class = "emptyTile" id = "emptyTile2">
+                        <img class = "emptyTile" id = "emptyTile3">
+                    </div>
+                </main>
+            </section>
+            
+        </main>
+    </div>
+</body>
     <footer class = "clearfloat">
 
         <a href = "#top"> 
             Return To Top
         </a>
+        
+        <button class = "fsBtn" id="btnFS">FullScreen</button>
+        <button class = "fsBtn" id="btnWS">Exit Full Screen</button>
     </footer>
-</body>
+</html>
