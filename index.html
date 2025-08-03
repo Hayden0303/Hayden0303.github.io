@@ -6,30 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="main.js" defer></script>
     <link href="style.css" type="text/css" rel="stylesheet">
-</head id = "top">
-<body>
+</head>
+<body id = "top">
     <header id = "headerBtn">
-        <ul>
             <h1>All About Mahjong</h1>
-            <il><button id="homebtn">Home</button></il>
-            <il><button id="page1btn">History</button></il>
-            <il><button id="page2btn">Types of Mahjong</button></il>
-            <il><button id="page3btn">How to play</button></il>
-            <il><button id="page4btn">Quiz</button></il>
-            <il><button id="page5btn">Minigame</button></il>
+        <ul>
+            <li><button id="homebtn">Home</button></li>
+            <li><button id="page1btn">History</button></li>
+            <li><button id="page2btn">Types of Mahjong</button></li>
+            <li><button id="page3btn">How to play</button></li>
+            <li><button id="page4btn">Quiz</button></li>
+            <li><button id="page5btn">Minigame</button></li>
         </ul>
     </header>
        
-    <div class = "flex-container">
         <main id="pagecontainer">
 
             <section class="page" id="page0">
-                <h1>Welcome To Mahjong!</h1>
+                <h2>Welcome To Mahjong!</h2>
                 
                 <img id = "homeScreenImg" src = "Images/homepage_mahjong.jpg" alt = "homepage">
+
+                
+                <img id = "QRCode" src = "Images/QRCode.png" alt = "QRCode">
+
             </section>
 
             <section class = "page" id = "page1">
+                
                 <nav>
                     <h2>This Page</h2>
                     <ul class = "navBtn">
@@ -39,8 +43,8 @@
                         <li><a href="#TilesBtn"> The Tiles</a></li>
                     </ul>
                 </nav>
-
-                <main class = "innerMain">
+            <h2>This Page</h2>
+                <div class = "innerMain">
                     <button id = "IntroBtn">Introduction</button>
 
                     <p class = "text" id = "text0">
@@ -131,7 +135,7 @@
                         - The #1 Bamboo tile became a canvas for creativity — morphing from a coin string into birds, peacocks, and cranes perched on bamboo.
                         This artistic freedom turned mahjong sets into collectible treasures, each telling a unique story.
                         </p>
-                </main>
+                </div>
             </section>
 
             <section class = "page" id = "page2">
@@ -148,8 +152,8 @@
                         <li><a href="#ComparisonTableBtn"> Comparison Table</a></li>
                     </ul>
                 </nav>
-                <main class = "innerMain">
-                    <h1>Mahjong Variants: Origins, Rules & Features</h1>
+                <div class = "innerMain">
+                    <h2>Mahjong Variants: Origins, Rules & Features</h2>
 
                 <button id = "ChineseBtn">1. Chinese Classical Mahjong</button>
 
@@ -269,7 +273,7 @@
                     </tr>
                 </table>
 
-                </main>
+            </div>
             </section>
 
             <section class = "page" id = "page3">
@@ -289,8 +293,8 @@
                     </ul>
                 </nav>
 
-                <main class = "innerMain">
-                    <h1>Singapore Mahjong Rules</h1>
+                <div class = "innerMain">
+                    <h2>Singapore Mahjong Rules</h2>
 
                     <button id = "TileSetBtn">1. Tile Set</button>
                         <ul class = "text" id = "text12">
@@ -381,20 +385,20 @@
                             <li>Use chips or tokens for scoring in casual games</li>
                         </ul>
 
-                </main>
+                    </div>
 
             </section>
 
             <section class = "page" id = "page4">
-                <main class = "quizMain">
-                    <h1>Quiz</h1>
+                <div class = "quizMain">
+                    <h2>Quiz</h2>
                     <h2 id = "scoreDisplay">Display Score</h2>
                     <button id = "StartQuizBtn">Start Quiz</button>
-                </main>
+                </div>
             </section>
 
             <section class = "page" id = "page5">
-                <main class = "minigameMain">
+                <div class = "minigameMain">
                     <button id = "StartGameBtn">Start Game</button>
                     <button id = "GameObjectiveBtn">Objective</button>
                     <div class = "text" id = "text22">
@@ -409,13 +413,13 @@
                     <div class = "text" id = "text24">
                         <p>Tile images by GitHub – FluffyStuff's Riichi Mahjong Tiles</p>
                     </div>
-                    <h2 class = "Counters" id = "ChiCounter"></h2>
-                    <h2 class = "Counters" id = "PongCounter"></h2>
-                </main> 
+                    <h2 class = "Counters" id = "ChiCounter">‎</h2>
+                    <h2 class = "Counters" id = "PongCounter">‎</h2>
+                </div> 
             </section>
 
             <section class = "page" id = "page6">
-                <main class = "quizStartMain">
+                <div class = "quizStartMain">
                     <div class = "top">
                         <h2 id = "QnNumber">QnNo</h2>
                         <h3 id = "Question">Question</h3>
@@ -428,30 +432,28 @@
                         <button id = "Option3">Option3</button>
                         <button id = "Option4">Option4</button>
                     </div>
-                </main>
+                </div>
             </section>
 
             <section class = "page" id = "page7">
-                <main class = "minigame">
-                    <h1 id = "gameText"></h1>
+                <div class = "minigame">
+                    <h2 id = "gameText">‎</h2>
                     <div id = "bottomArea">
-                        <img class = "emptyTile" id = "emptyTile1">
-                        <img class = "emptyTile" id = "emptyTile2">
-                        <img class = "emptyTile" id = "emptyTile3">
+                        <img class = "emptyTile" id = "emptyTile1" src = "blank" alt = "1EmptyTile">
+                        <img class = "emptyTile" id = "emptyTile2" src = "blank" alt = "2EmptyTile">
+                        <img class = "emptyTile" id = "emptyTile3" src = "blank" alt = "3EmptyTile">
                     </div>
-                </main>
+                </div>
             </section>
-            
+        
         </main>
-    </div>
-</body>
     <footer class = "clearfloat">
 
         <a href = "#top"> 
             Return To Top
         </a>
-        
         <button class = "fsBtn" id="btnFS">FullScreen</button>
         <button class = "fsBtn" id="btnWS">Exit Full Screen</button>
     </footer>
+</body>
 </html>

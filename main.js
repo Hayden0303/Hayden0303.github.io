@@ -42,11 +42,6 @@ const StartQuizBtn=document.querySelector("#StartQuizBtn");
 var allpages=document.querySelectorAll(".page");
 var alltext=document.querySelectorAll(".text");
 
-const option1=document.querySelector("#Option1");
-const option2=document.querySelector("#Option2");
-const option3=document.querySelector("#Option3");
-const option4=document.querySelector("#Option4");
-
 //Minigame Page
 
 const startgameBtn=document.querySelector("#StartGameBtn");
@@ -56,7 +51,6 @@ const CreditsBtn=document.querySelector("#CreditsBtn");
 
 const chiAudio = new Audio("Audio/Chi_Audio.mp3");
 const pongAudio = new Audio("Audio/Pong_Audio.mp3");
-
 
 
 //select all subtopic pages
@@ -78,7 +72,7 @@ function show(pgno){ //function to show selected page no
 eventhandler functions to call show function*/
 homebtn.addEventListener("click", function () {
     show(0);
-})
+});
 page1btn.addEventListener("click", function () {
     show(1);
 });
@@ -200,6 +194,45 @@ hidealltext(alltext);
 hideall(allpages);
 show(0);
 
+var quizList = [
+    "Which of these tiles is a fake tile?",
+    "What is a unique rule in Japanese Riichi Mahjong?",
+    "Which of these is NOT a standard Wind tile in Cantonese Mahjong?",
+    "What is the maximum fan count allowed in Singaporean Mahjong scoring?",
+    "Which country was Mahjong first invented in?",
+    "What does the Red Dora tile signify in Riichi Mahjong?",
+    "Which tile is typically used to represent the 'White Dragon'?",
+    "In Singaporean Mahjong, what combination scores the most points?",
+    "Which of the following tiles is NOT a terminal tile?",
+    "What major event popularized Mahjong in the United States in the 1920s?"
+];
+
+var quizOptions = [
+    ["3 Bamboo", "2 Circles", "Red Dragon", "10 Bamboo"],
+    ["Riichi declaration", "Seven pairs win", "No Flower tiles", "East must win first"],
+    ["East", "South", "North", "Central"],
+    ["5 fan", "7 fan", "13 fan", "Unlimited"],
+    ["Japan", "China", "Singapore", "Vietnam"],
+    ["It's worth bonus points", "It cancels a win", "It's a discard tile", "It ends the round"],
+    ["Blank tile", "Green tile", "Character tile", "Bamboo tile"],
+    ["All Honors", "Pure Suit", "Full Flush with Flower Bonus", "Thirteen Orphans"],
+    ["1 Dot", "9 Bamboo", "East Wind", "5 Circle"],
+    ["Mahjong-themed Broadway show", "Release of the first Mahjong comic book", "Introduction by Chinese immigrants", "Marketing campaign by Abercrombie & Fitch"]
+];
+
+var correctAnswers = [
+    "10 Bamboo",
+    "Riichi declaration",
+    "Central",
+    "Unlimited",
+    "China",
+    "It's worth bonus points",
+    "Blank tile",
+    "Thirteen Orphans",
+    "East Wind",
+    "Marketing campaign by Abercrombie & Fitch"
+];
+
 
 function toggleText(textno) {
     const textItem = document.querySelector("#text" + textno);
@@ -230,138 +263,186 @@ function hidealltext(_hiddentext){
     }
 }
 
+
+var quizList = [
+    "Which of these tiles is a fake tile?",
+    "What is a unique rule in Japanese Riichi Mahjong?",
+    "Which of these is NOT a standard Wind tile in Cantonese Mahjong?",
+    "What is the maximum fan count allowed in Singaporean Mahjong scoring?",
+    "Which country was Mahjong first invented in?",
+    "What does the Red Dora tile signify in Riichi Mahjong?",
+    "Which tile is typically used to represent the 'White Dragon'?",
+    "In Singaporean Mahjong, what combination scores the most points?",
+    "Which of the following tiles is NOT a terminal tile?",
+    "What major event popularized Mahjong in the United States in the 1920s?"
+];
+
+var quizOptions = [
+    ["3 Bamboo", "2 Circles", "Red Dragon", "10 Bamboo"],
+    ["Riichi declaration", "Seven pairs win", "No Flower tiles", "East must win first"],
+    ["East", "South", "North", "Central"],
+    ["5 fan", "7 fan", "13 fan", "Unlimited"],
+    ["Japan", "China", "Singapore", "Vietnam"],
+    ["It's worth bonus points", "It cancels a win", "It's a discard tile", "It ends the round"],
+    ["Blank tile", "Green tile", "Character tile", "Bamboo tile"],
+    ["All Honors", "Pure Suit", "Full Flush with Flower Bonus", "Thirteen Orphans"],
+    ["1 Dot", "9 Bamboo", "East Wind", "5 Circle"],
+    ["Mahjong-themed Broadway show", "Release of the first Mahjong comic book", "Introduction by Chinese immigrants", "Marketing campaign by Abercrombie & Fitch"]
+];
+
+var correctAnswers = [
+    "10 Bamboo",
+    "Riichi declaration",
+    "Central",
+    "Unlimited",
+    "China",
+    "It's worth bonus points",
+    "Blank tile",
+    "Thirteen Orphans",
+    "East Wind",
+    "Marketing campaign by Abercrombie & Fitch"
+];
+
 function shuffleListsInSync(listA, listB, listC) {
-    for (let i = listA.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [listA[i], listA[j]] = [listA[j], listA[i]];
-        [listB[i], listB[j]] = [listB[j], listB[i]];
-        [listC[i], listC[j]] = [listC[j], listC[i]];
+    for (var i = listA.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp;
+
+        temp = listA[i]; listA[i] = listA[j]; listA[j] = temp;
+        temp = listB[i]; listB[i] = listB[j]; listB[j] = temp;
+        temp = listC[i]; listC[i] = listC[j]; listC[j] = temp;
     }
     return [listA, listB, listC];
 }
 
 function shuffleInnerOptions(optionList) {
-    for (let i = 0; i < optionList.length; i++) {
-        for (let j = optionList[i].length - 1; j > 0; j--) {
-            const k = Math.floor(Math.random() * (j + 1));
-            [optionList[i][j], optionList[i][k]] = [optionList[i][k], optionList[i][j]];
+    for (var i = 0; i < optionList.length; i++) {
+        for (var j = optionList[i].length - 1; j > 0; j--) {
+            var k = Math.floor(Math.random() * (j + 1));
+            var temp = optionList[i][j];
+            optionList[i][j] = optionList[i][k];
+            optionList[i][k] = temp;
         }
     }
     return optionList;
 }
 
-const quizList = [
-        "Which of these tiles is a fake tile?", // From your original
-        "What is a unique rule in Japanese Riichi Mahjong?",
-        "Which of these is NOT a standard Wind tile in Cantonese Mahjong?",
-        "What is the maximum fan count allowed in Singaporean Mahjong scoring?",
-        "Which country was Mahjong first invented in?",
-        "What does the Red Dora tile signify in Riichi Mahjong?",
-        "Which tile is typically used to represent the 'White Dragon'?",
-        "In Singaporean Mahjong, what combination scores the most points?",
-        "Which of the following tiles is NOT a terminal tile?",
-        "What major event popularized Mahjong in the United States in the 1920s?"
-];
-    
-const quizOptions = [
-        ["3 Bamboo", "2 Circles", "Red Dragon", "10 Bamboo"], // Original
-        ["Riichi declaration", "Seven pairs win", "No Flower tiles", "East must win first"],
-        ["East", "South", "North", "Central"],
-        ["5 fan", "7 fan", "13 fan", "Unlimited"],
-        ["Japan", "China", "Singapore", "Vietnam"],
-        ["It's worth bonus points", "It cancels a win", "It's a discard tile", "It ends the round"],
-        ["Blank tile", "Green tile", "Character tile", "Bamboo tile"],
-        ["All Honors", "Pure Suit", "Full Flush with Flower Bonus", "Thirteen Orphans"],
-        ["1 Dot", "9 Bamboo", "East Wind", "5 Circle"],
-        ["Mahjong-themed Broadway show", "Release of the first Mahjong comic book", "Introduction by Chinese immigrants", "Marketing campaign by Abercrombie & Fitch"]
-];
+function startQuiz() {
+    var quizState = {
+        score: 0,
+        timeoutId: null
+    };
 
-const correctAnswers = [
-        "10 Bamboo", // Fake tile (original question)
-        "Riichi declaration", // Unique rule in Japanese Riichi Mahjong
-        "Central", // Not a Wind tile in Cantonese Mahjong
-        "Unlimited", // Max fan count in Singaporean Mahjong
-        "China", // Origin country of Mahjong
-        "It's worth bonus points", // Red Dora tile in Riichi
-        "Blank tile", // Represents White Dragon
-        "Thirteen Orphans", // High-scoring combo in Singaporean Mahjong
-        "East Wind", // Not a terminal tile
-        "Marketing campaign by Abercrombie & Fitch" // Popularized Mahjong in USA
-];
+    var i = 0;
+    var timer = document.getElementById("timerBar");
+    var scoreDisplay = document.getElementById("currentScore");
+    var questionText = document.getElementById("Question");
+    var questionNumber = document.getElementById("QnNumber");
 
-async function startQuiz(){//Asynchronous function, allows to use await
-    var score = 0;
-    
-    document.getElementById("currentScore").textContent = "Score: " + score;
-    var questionAnswered;
+    if (scoreDisplay) scoreDisplay.textContent = "Score: " + quizState.score;
 
-    const [newquizList, newquizOptions, newCorrectAnswers] = shuffleListsInSync(quizList, quizOptions, correctAnswers);
-    const timer = document.querySelector("#timerBar");
-    shuffleInnerOptions(newquizOptions);
+    var shuffled = shuffleListsInSync(quizList.slice(), quizOptions.slice(), correctAnswers.slice());
+    var newquizList = shuffled[0];
+    var newquizOptions = shuffleInnerOptions(shuffled[1]);
+    var newCorrectAnswers = shuffled[2];
 
-    for (let i = 0; i < newquizList.length; i++) {
-        timer.classList.remove("paused");
-        timer.classList.remove("startTimer");  
-        void timer.offsetWidth;
-        timer.classList.add("startTimer");
-        questionAnswered = false;
-        canAnswerQn = true;
-        document.getElementById("QnNumber").textContent = "Qn " + (i + 1);
-        document.getElementById("Question").textContent = newquizList[i];
-
-        for (let i = 1; i <= 4; i++) {
-            document.getElementById("Option" + i).disabled = false;
+    function showAnswerFeedback(questionIndex) {
+        for (var y = 1; y <= 4; y++) {
+            var optionElem = document.getElementById("Option" + y);
+            if (optionElem) {
+                optionElem.textContent = newquizOptions[questionIndex][y - 1];
+                if (newquizOptions[questionIndex][y - 1] === newCorrectAnswers[questionIndex]) {
+                    optionElem.className = "correctOption";
+                } else {
+                    optionElem.className = "wrongOption";
+                }
+            }
         }
 
-        await Promise.race([ //Race is used to allow 2 promises to 'race' to see which one is resolved first
-            new Promise(resolve => {
-                for (let y = 1; y <= 4; y++) {
-                    document.getElementById("Option" + y).textContent = newquizOptions[i][y - 1];
-                    document.getElementById("Option" + y).onclick = function () {
-                    timer.classList.add("paused");
-                    if (newquizOptions[i][y - 1] == newCorrectAnswers[i]) {
-                        score++;
-                        document.getElementById("currentScore").textContent = "Score: " + score;
-                    }
-                    resolve(); //Resolve on click
-                    };
-                    
-                    }   
-            }),
-            new Promise(resolve => setTimeout(resolve, 5000)) //Resolve after 5 sec
-        ]);
-        
-        
-        for (let i = 1; i <= 4; i++) {
-            document.getElementById("Option" + i).disabled = true;
-        }
-
-        for (let y = 1; y <= 4; y++) {
-            document.getElementById("Option" + y).textContent = newquizOptions[i][y - 1];
-            const currentOption = document.getElementById("Option" + y);
-            if (newquizOptions[i][y - 1] == newCorrectAnswers[i]) {
-                currentOption.classList.add("correctOption");
-            }else{
-                currentOption.classList.add("wrongOption");
+        setTimeout(function() {
+            for (var y = 1; y <= 4; y++) {
+                var optionElem = document.getElementById("Option" + y);
+                if (optionElem) {
+                    optionElem.className = "";
+                }
             }
-        };
-
-        await new Promise(resolve => setTimeout(resolve, 1000));
-
-        for (let y = 1; y <= 4; y++) {
-            document.getElementById("Option" + y).textContent = newquizOptions[i][y - 1];
-            const currentOption = document.getElementById("Option" + y);
-            if (newquizOptions[i][y - 1] == newCorrectAnswers[i]) {
-                currentOption.classList.remove("correctOption");
-            }else{
-                currentOption.classList.remove("wrongOption");
-            }
-        };
-
+            i++;
+            nextQuestion();
+        }, 1000);
     }
-    headerBtn.classList.remove("inQuiz");
-    show(4);
-    document.getElementById("scoreDisplay").textContent = "You got a score of: " + score;
+
+    function resetTimerBar(questionIndex) {
+        if (timer) {
+            timer.className = "";
+            void timer.offsetWidth;
+            timer.className = "startTimer";
+        }
+
+        if (quizState.timeoutId !== null) {
+            clearTimeout(quizState.timeoutId);
+        }
+
+        quizState.timeoutId = setTimeout(function() {
+            showAnswerFeedback(questionIndex);
+        }, 5000);
+    }
+
+    function nextQuestion() {
+        if (i >= newquizList.length) {
+            if (typeof headerBtn !== "undefined") {
+                headerBtn.classList.remove("inQuiz");
+            }
+            if (typeof show === "function") {
+                show(4);
+            }
+            var finalScore = document.getElementById("scoreDisplay");
+            if (finalScore) finalScore.textContent = "You got a score of: " + quizState.score;
+            return;
+        }
+
+        resetTimerBar(i);
+
+        if (questionText) questionText.textContent = newquizList[i];
+        if (questionNumber) questionNumber.textContent = "Qn " + (i + 1);
+
+        for (var j = 1; j <= 4; j++) {
+        (function(optIndex, questionIndex, options, answer, timerElem, scoreElem, scoreRef, showFeedbackFn) {
+            var opt = document.getElementById("Option" + optIndex);
+            if (opt) {
+                opt.disabled = false;
+                opt.textContent = options[optIndex - 1];
+                opt.className = "";
+
+                var clicked = false;
+                opt.onclick = function() {
+                    if (clicked) return;
+                    clicked = true;
+
+                    if (timerElem) timerElem.classList.add("paused");
+
+                    for (var k = 1; k <= 4; k++) {
+                        var btn = document.getElementById("Option" + k);
+                        if (btn) btn.disabled = true;
+                    }
+
+                    if (options[optIndex - 1] === answer) {
+                        scoreRef.score++;
+                        if (scoreElem) scoreElem.textContent = "Score: " + scoreRef.score;
+                    }
+
+                    if (scoreRef.timeoutId !== null) {
+                        clearTimeout(scoreRef.timeoutId);
+                        scoreRef.timeoutId = null;
+                    }
+
+                    showFeedbackFn(questionIndex);
+                };
+            }
+        })(j, i, newquizOptions[i], newCorrectAnswers[i], timer, scoreDisplay, quizState, showAnswerFeedback);
+    }
+    }
+
+    nextQuestion();
 }
 
 const clickedTiles = [];
@@ -384,7 +465,7 @@ function createFallingImage() {
 
     const img = document.createElement("img");
     img.style.position = "absolute";
-    img.style.left = `${randomX}%`;
+    img.style.left = randomX + "%";
     const randomImage = Math.floor(Math.random() * 9) + 1;
     img.src = "Images/" + randomImage + "circle.png";
     img.classList.add("fallable");
@@ -417,12 +498,12 @@ function createFallingImage() {
 
             clickedTiles.length = 0;
             
-
-            setTimeout(() => {document.getElementById("gameText").textContent = "";}, 1000);
+        setTimeout(function() { document.getElementById("gameText").textContent = "";
+        }, 1000);
 
         }
         img.remove();
-    })
+    });
 
     minigame.appendChild(img);
 }
@@ -433,7 +514,7 @@ function checkPong(tilesLst){
             console.log(i);
             console.log(tilesLst[i]);
             console.log(tilesLst[i + 1]);
-            return false
+            return false;
         }
     }
     return true;
@@ -446,7 +527,7 @@ function checkChi(tilesLst){
             console.log(i);
             console.log(tilesLst[i] + 1);
             console.log(tilesLst[i + 1]);
-            return false
+            return false;
         }
     }
     return true;
