@@ -194,52 +194,13 @@ hidealltext(alltext);
 hideall(allpages);
 show(0);
 
-var quizList = [
-    "Which of these tiles is a fake tile?",
-    "What is a unique rule in Japanese Riichi Mahjong?",
-    "Which of these is NOT a standard Wind tile in Cantonese Mahjong?",
-    "What is the maximum fan count allowed in Singaporean Mahjong scoring?",
-    "Which country was Mahjong first invented in?",
-    "What does the Red Dora tile signify in Riichi Mahjong?",
-    "Which tile is typically used to represent the 'White Dragon'?",
-    "In Singaporean Mahjong, what combination scores the most points?",
-    "Which of the following tiles is NOT a terminal tile?",
-    "What major event popularized Mahjong in the United States in the 1920s?"
-];
-
-var quizOptions = [
-    ["3 Bamboo", "2 Circles", "Red Dragon", "10 Bamboo"],
-    ["Riichi declaration", "Seven pairs win", "No Flower tiles", "East must win first"],
-    ["East", "South", "North", "Central"],
-    ["5 fan", "7 fan", "13 fan", "Unlimited"],
-    ["Japan", "China", "Singapore", "Vietnam"],
-    ["It's worth bonus points", "It cancels a win", "It's a discard tile", "It ends the round"],
-    ["Blank tile", "Green tile", "Character tile", "Bamboo tile"],
-    ["All Honors", "Pure Suit", "Full Flush with Flower Bonus", "Thirteen Orphans"],
-    ["1 Dot", "9 Bamboo", "East Wind", "5 Circle"],
-    ["Mahjong-themed Broadway show", "Release of the first Mahjong comic book", "Introduction by Chinese immigrants", "Marketing campaign by Abercrombie & Fitch"]
-];
-
-var correctAnswers = [
-    "10 Bamboo",
-    "Riichi declaration",
-    "Central",
-    "Unlimited",
-    "China",
-    "It's worth bonus points",
-    "Blank tile",
-    "Thirteen Orphans",
-    "East Wind",
-    "Marketing campaign by Abercrombie & Fitch"
-];
-
-
+//Make text fade in/out
 function toggleText(textno) {
     const textItem = document.querySelector("#text" + textno);
     const isShowing = textItem.classList.contains("textShow");
 
 
-    if (!isShowing) {
+    if (!isShowing) {//if text is not there
         textItem.classList.add("textShow");
         textItem.style.display = "block";
         textItem.classList.add("down");
@@ -308,6 +269,7 @@ function shuffleListsInSync(listA, listB, listC) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp;
 
+        //Knuth Shuffle
         temp = listA[i]; listA[i] = listA[j]; listA[j] = temp;
         temp = listB[i]; listB[i] = listB[j]; listB[j] = temp;
         temp = listC[i]; listC[i] = listC[j]; listC[j] = temp;
@@ -347,6 +309,7 @@ function startQuiz() {
     var newCorrectAnswers = shuffled[2];
 
     function showAnswerFeedback(questionIndex) {
+        //Check for correct option
         for (var y = 1; y <= 4; y++) {
             var optionElem = document.getElementById("Option" + y);
             if (optionElem) {
@@ -371,6 +334,7 @@ function startQuiz() {
         }, 1000);
     }
 
+    //Timer
     function resetTimerBar(questionIndex) {
         if (timer) {
             timer.className = "";
@@ -409,11 +373,13 @@ function startQuiz() {
         (function(optIndex, questionIndex, options, answer, timerElem, scoreElem, scoreRef, showFeedbackFn) {
             var opt = document.getElementById("Option" + optIndex);
             if (opt) {
+                //make buttons clickable and move on to next question
                 opt.disabled = false;
                 opt.textContent = options[optIndex - 1];
                 opt.className = "";
 
                 var clicked = false;
+                //Check for click
                 opt.onclick = function() {
                     if (clicked) return;
                     clicked = true;
@@ -458,10 +424,13 @@ function createFallingImage() {
 
     const img = document.createElement("img");
     img.style.position = "absolute";
-    img.style.left = randomX + "%";
+    img.style.left = randomX + "%";//random percentage of the screen
     const randomImage = Math.floor(Math.random() * 9) + 1;
-    img.src = "Images/" + randomImage + "circle.png";
+    img.src = "Images/" + randomImage + "circle.png";//get random img
     img.classList.add("fallable");
+    img.addEventListener("animationend", () => {//check for animation end and removes img
+        img.remove();
+    });
 
     img.addEventListener("click", function () {
         clickedTiles.push(randomImage);
