@@ -3,9 +3,33 @@
     /*make a menu items vertical*/
     nav ul li{display:block;}
 
+@font-face {
+    font-family: 'header-font';
+    src: url('Fonts/BADABB__.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'p-font';
+    src: url('Fonts/LEMONMILK-Regular.OTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'h1-font';
+    src: url('Fonts/monofonto rg.OTF') format('truetype');
+}
+
 *{box-sizing: border-box;margin:0;} /*box-sizing and all margins:0*/
 
 h1, h2{text-align: center;} /*align all h1 and h2 to center*/
+
+h1{
+  
+    font-family: "header-font", sans-serif;
+}
+h2{
+  
+    font-family: "h1-font", sans-serif;
+}
 
 #headerBtn{
   background-color: #2E8B57;
@@ -15,7 +39,8 @@ h1, h2{text-align: center;} /*align all h1 and h2 to center*/
   text-align: center;
 }
 
-.page{width:99vw;height:200vh;}
+.page{width:99vw;height:310vh;}
+
 #page4{
     height:100vh;
 }
@@ -31,6 +56,14 @@ h1, h2{text-align: center;} /*align all h1 and h2 to center*/
 #page7{
     height:100vh;
 }
+
+#allTiles {
+  width: 50%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
 
 @keyframes dropDown {
   from {
@@ -220,6 +253,8 @@ button{
     border-radius: 8px;
     font-size: 16px;
     cursor:pointer;
+    
+    font-family: "p-font", sans-serif;
 }
 
 footer{
@@ -282,7 +317,7 @@ td, th {
 
 #homeScreenImg{
   width:100%;
-  height:50%;
+  height:auto;
 }
 
 #QRCode{
@@ -348,6 +383,14 @@ td, th {
     }
   }
 
+  iframe{
+    width:50%;
+    height:auto;
+  }
+
+  .fsBtn{
+    display:none;
+  }
 }
 
 .clearfloat{float:none; /*resets float*/}
